@@ -1,0 +1,35 @@
+# Edit this file to change what the agent looks for. No code changes needed.
+profile:
+  summary: >
+    BTech ECE undergraduate (graduating 2027) with a Data Science internship,
+    Python/Pandas/SQL/scikit-learn, ETL pipelines, Streamlit dashboards,
+    GitHub Actions CI/CD, Power BI, Excel, and IoT/embedded (ESP8266) projects.
+  # Search queries sent to job APIs
+  search_titles:
+    - data science intern
+    - data analyst intern
+    - python developer intern
+    - software engineer intern
+    - data analyst fresher
+    - junior data engineer
+    - python developer fresher
+    - machine learning intern
+  # Words that raise the score if found in the job title/description
+  title_keywords: [data, analyst, python, software, machine learning, ml, etl, intern, trainee, fresher, junior, associate, engineer]
+  skills: [python, pandas, sql, scikit-learn, streamlit, etl, power bi, excel, git, github actions, rest api, machine learning, data analysis, sqlite, java, c++, iot, embedded, pytest]
+  # Titles/phrases that disqualify a job
+  exclude: [senior, sr., lead, principal, manager, director, head of, architect, staff engineer, 5+ years, 4+ years, 3+ years]
+
+location:
+  cities: [kolkata, howrah, salt lake, new town, rajarhat, sector v]
+  states: [west bengal]
+  allow_remote: true        # include remote jobs open to India
+  country: in
+
+job_types: [internship, full-time]   # informational + used for scoring boost
+
+notify:
+  min_score: 55             # 0-100. Raise for fewer, better matches.
+  max_per_run: 15
+  use_llm: true             # refine top matches with Claude (needs ANTHROPIC_API_KEY). Falls back to keyword score if unset.
+  max_age_days: 3
