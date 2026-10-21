@@ -15,7 +15,7 @@ Remotive (remote jobs) needs no key.
 
 ## 2. Test on your computer
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-agent.txt
 export ADZUNA_APP_ID=... ADZUNA_APP_KEY=...        # Windows: set instead of export
 python main.py --dry-run          # prints matches, sends nothing
 export TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=...
@@ -36,3 +36,10 @@ If you get too few jobs, lower `min_score` to 40. If too many weak ones, raise i
 - Naukri, Internshala and LinkedIn have no public API and block scrapers, so they appear only when Google Jobs/Adzuna index them (JSearch is the best route for this).
 - Some links may be reposts or closed. Check the posting date before applying.
 - Run `python -m pytest` after editing the scoring logic.
+
+## 4. Streamlit dashboard (optional)
+1. Go to https://share.streamlit.io → sign in with GitHub → **Create app**.
+2. Choose this repo, branch `main`, main file `app.py`, then Deploy.
+   (Private repos work: allow Streamlit access to it when asked.)
+3. The agent commits `matches.json` after each daily run and the app picks it up. No keys go into Streamlit.
+Run locally: `pip install -r requirements.txt && streamlit run app.py`

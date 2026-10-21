@@ -27,6 +27,7 @@ def main() -> None:
             print(notify.format_job(j), "\n---")
         return
     if matches:
+        store.add_matches(matches)
         if notify.send_telegram(matches):
             now = time.time()
             for j in matches:
